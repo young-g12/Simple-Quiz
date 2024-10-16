@@ -1,81 +1,98 @@
 def loop():
     while True:
+        # Initialize correct answer count
+        correct_answers = 0
+        total_questions = 5
+
+        # Question 1
         questionNumberOne = "What is the name for a fear of spiders?"
         answerOne = {
-        "A": "Aquaphobia",
-        "B": "Mysophobia",
-        "C": "Claustrophobia",
-        "D": "Arachnophobia"
+            "A": "Aquaphobia",
+            "B": "Mysophobia",
+            "C": "Claustrophobia",
+            "D": "Arachnophobia"
         }
         print(answerOne)
         choice = input(questionNumberOne).lower()
         if choice not in ["a", "b", "c", "d"]:
             print("Invalid choice, please choose A, B, C, or D.")
         elif choice == "d":
-            print("correct")
+            print("Correct!")
+            correct_answers += 1  # Increment correct answer count
         else:
-            print("incorrect")
+            print("Incorrect.")
 
-
+        # Question 2
         questionNumberTwo = "Who is the first person to step on the moon?"
         answerTwo = {
-        "A": "Neil Armstrong",
-        "B": "Yuri Gagarin",
-        "C": "Alan Shepard",
-        "D": "John Glen"
+            "A": "Neil Armstrong",
+            "B": "Yuri Gagarin",
+            "C": "Alan Shepard",
+            "D": "John Glen"
         }
         print(answerTwo)
         if input(questionNumberTwo).lower() == "a":
-            print("correct")
+            print("Correct!")
+            correct_answers += 1  # Increment correct answer count
         else:
-            print("incorrect")
+            print("Incorrect.")
 
-
+        # Question 3
         questionNumberThree = "Who is the first person to sail around the world?"
         answerThree = {
-        "A": "Christopher Columbus",
-        "B": "Zheng He",
-        "C": "Ferdinand Magellan",
-        "D": "John Cabot"
+            "A": "Christopher Columbus",
+            "B": "Zheng He",
+            "C": "Ferdinand Magellan",
+            "D": "John Cabot"
         }
         print(answerThree)
         if input(questionNumberThree).lower() == "c":
-            print("correct")
+            print("Correct!")
+            correct_answers += 1  # Increment correct answer count
         else:
-            print("incorrect")
+            print("Incorrect.")
 
-
+        # Question 4
         questionNumberFour = "How many days are in a leap year?"
         answerFour = {
-        "A": "1000",
-        "B": "275",
-        "C": "365",
-        "D": "366"
+            "A": "1000",
+            "B": "275",
+            "C": "365",
+            "D": "366"
         }
         print(answerFour)
         if input(questionNumberFour).lower() == "d":
-            print("correct")
+            print("Correct!")
+            correct_answers += 1  # Increment correct answer count
         else:
-            print("incorrect")
+            print("Incorrect.")
 
-
+        # Question 5
         questionNumberFive = "What mammal lays eggs?"
         answerFive = {
-        "A": "Platypuses",
-        "B": "Sharks",
-        "C": "Humans",
-        "D": "Dolphins"
+            "A": "Platypuses",
+            "B": "Sharks",
+            "C": "Humans",
+            "D": "Dolphins"
         }
         print(answerFive)
         if input(questionNumberFive).lower() == "a":
-            print("correct")
+            print("Correct!")
+            correct_answers += 1  # Increment correct answer count
         else:
-            print("incorrect")
+            print("Incorrect.")
 
-        playAgain = input("If you would like to play again, please type 'yes'. Otherwise, type 'no':")
+        # Calculate score
+        percentage = (correct_answers / total_questions) * 100
+        print(f"\nYou got {correct_answers}/{total_questions} correct.")
+        print(f"That's {percentage:.2f}%.")
 
-        if playAgain.lower() != "yes":
+        # Play again check
+        playAgain = input("\nIf you would like to play again, type 'yes'. Otherwise, type 'no': ").lower()
+        if playAgain != "yes":
             print("Good Job, keep studying!")
             break
 
+
+# Running the loop (quiz)
 loop()
